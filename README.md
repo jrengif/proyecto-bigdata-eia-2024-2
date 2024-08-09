@@ -38,13 +38,17 @@ Este repositorio contiene el codigo fuente y los diagramas de arquitectura del p
 
 
 # Componentes Arquitectura
-![Componentes Arquitectura](arquitectura/componentes_arquitectura.png)
-
-# Arquitectura Propuesta
 
 A continuación se pueden apreciar las 4 capas de servicios usados en la solución:
 
-- **Almacenamiento:** Conformado por dos buckets de S3 que representan la zona de datos crudos (RAW) y la zona de datos curados (CURATED) respectivamente, ademas de un motor SQL  
+- **Almacenamiento:** Conformado por dos buckets de S3 que representan la zona de datos crudos (RAW) y la zona de datos curados (CURATED) respectivamente, ademas de un motor SQL basado en una instancia MySQL en AWS RDS y un motor de datawarehouse que consiste en una base de datos en Snowflake.
+- **Procesamiento:** El procesamiento esta compuesto por dos AWS Lambdas y un notebook en Google colab.
+- **Catalogo de datos:** Se utilizadon dos crawlers que se encargan de rastrear y crear los metadatos de las tablas externas sobre los datos obtenidos desde MySQL y Snowflake.
+- **Query Engine:** Se basa en el servicio de athena que con base en el catalogo de datos consulta la data que esta en S3 por medio de queries.
+
+![Componentes Arquitectura](arquitectura/componentes_arquitectura.png)
+
+# Arquitectura Propuesta
 
 ![Arquitectura Proyecto final](arquitectura/diagrama_arquitectura.png)
 
