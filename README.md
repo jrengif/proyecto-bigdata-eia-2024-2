@@ -38,7 +38,7 @@ Este repositorio contiene el codigo fuente y los diagramas de arquitectura del p
 
 
 # Componentes Arquitectura
-![Componentes Arquitectura](arquitectura\componentes_arquitectura.png)
+![Componentes Arquitectura](arquitectura/componentes_arquitectura.png)
 
 # Arquitectura Propuesta
 
@@ -46,5 +46,5 @@ A continuaci√≥n se pueden apreciar las 4 capas de servicios usados en la soluci√
 
 - **Almacenamiento:** Conformado por dos buckets de S3 que representan la zona de datos crudos (RAW) y la zona de datos curados (CURATED) respectivamente, ademas de un motor SQL  
 
-![Arquitectura Proyecto final](arquitectura\diagrama_arquitectura.png)
+![Arquitectura Proyecto final](arquitectura/diagrama_arquitectura.png)
 
