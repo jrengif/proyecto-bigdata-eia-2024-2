@@ -1,0 +1,21 @@
+{
+  "RDS_HOST": "rds-mysql-proyecto-bigdata-eia.c7u6yi84ujhw.us-east-1.rds.amazonaws.com",
+  "RDS_USER": "admin",
+  "RDS_PASSWORD": "sistems-NSJ18*",
+  "RDS_DB": "bd_mysql_proyecto_eia",
+  "RDS_PORT": 3306,
+  "BUCEKT_NAME": "raw-zone-proyecto-bigdata",
+  "FILE_KEY": "football_players/latest_football_players_2024_data.csv",
+  "TABLE_NAME": "football_stats",
+  "BUCKET_NAME_CURATED": "curated-zone-proyecto-bigdata",
+  "FILE_KEY_CURATED_SQL":  "football_players/latest_football_players_2024_data.csv",
+  "SNOWFLAKE_USER": "JRENGIF9",
+  "SNOWFLAKE_PASSWORD": "sistems-NSJ18*",
+  "SNOWFLAKE_ACCOUNT": "hmvvjnq-mcb47159",
+  "SNOWFLAKE_WAREHOUSE": "COMPUTE_WH",
+  "SNOWFLAKE_DATABASE": "CITIBIKE",
+  "SNOWFLAKE_SCHEMA": "PUBLIC",
+  "SNOWFLAKE_TABLE": "TRIPS",
+  "FILE_KEY_CURATED_SNOWFLAKE":  "TRIPS/TRIPS.csv",
+  "ROLE": "ACCOUNTADMIN"
+}

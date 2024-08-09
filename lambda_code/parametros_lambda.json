@@ -1,9 +1,0 @@
-{
-    "RDS_HOST": "rds-mysql-proyecto-bigdata-eia.c7u6yi84ujhw.us-east-1.rds.amazonaws.com",
-    "RDS_USER": "admin",
-    "RDS_PASSWORD": "sistems-NSJ18*",
-    "RDS_DB": "bd_mysql_proyecto_eia",
-    "BUCEKT_NAME": "raw-zone-proyecto-bigdata",
-    "FILE_KEY": "football_players/latest_football_players_2024_data.csv",
-    "TABLE_NAME": "football_stats"
-  }

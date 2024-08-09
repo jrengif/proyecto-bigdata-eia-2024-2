@@ -8,10 +8,8 @@ from io import StringIO
 
 # Lambda handler function
 def lambda_handler(event, context):
-    # Get bucket and file information from the event
     
-    print("leyendo datos evento")
-    # RDS settings
+    # Se obtienen las credenciales de RDS
     rds_host = event['RDS_HOST']
     rds_user = event['RDS_USER']
     rds_password = event['RDS_PASSWORD']
@@ -29,28 +27,22 @@ def lambda_handler(event, context):
         db=rds_db,
         connect_timeout=5
     )
-    
-    print("Iniciando configuracion conexion")
-
     cursor = conn.cursor()
     
-    print("conectado")
-
-    
-    s3_client = boto3.client('s3')
-    # Download CSV file from S3
+    # Se obtiene el archivo csv de la zona raw en S3
+    s3_client = boto3.client('s3')    
     response = s3_client.get_object(Bucket=bucket_name, Key=file_name)
     csv_content = response['Body'].read().decode('utf-8')
     
-    # Parse CSV
+    # Objeto para hacer la lectura mas facil del csv
     csv_reader = csv.reader(StringIO(csv_content))
     
-    # Skip the header row
+    # Nos saltamos la primera fila del csv que es la que contiene el encabezado
     next(csv_reader)
     
+    # Se recorren los datos fila por fila para hacer la insercion en MySQL registros por registro
     for row in csv_reader:
-        print(row)
-        # Adjust this query according to your table schema
+        
         query = f"INSERT INTO {table_name} (teams, seasons, players, matches, goals, assists, seasons_ratings) VALUES (%s, %s, %s, %s, %s, %s, %s);"
         cursor.execute(query, (row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
     
